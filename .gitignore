@@ -3,4 +3,5 @@ env/
 
 .cache
 playlists_metadata.csv
+playlists_metadata_imputed.csv
 artist_genre_cache.json
