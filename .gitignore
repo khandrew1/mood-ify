@@ -1,0 +1,6 @@
+env/
+.env
+
+.cache
+playlists_metadata.csv
+artist_genre_cache.json
