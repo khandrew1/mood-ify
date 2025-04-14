@@ -9,3 +9,4 @@ artist_genre_cache.json
 __pycache__/
 models/
 data/
+vectorizers/

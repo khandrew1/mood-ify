@@ -3,3 +3,5 @@ pandas
 tqdm
 dotenv
 scikit-learn
+fastapi
+openai

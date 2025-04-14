@@ -6,10 +6,8 @@ from tqdm import tqdm
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 
-# Load .env credentials
 load_dotenv()
 
-# Auth for Spotify
 sp = spotipy.Spotify(
     auth_manager=SpotifyClientCredentials(
         client_id=os.getenv("SPOTIPY_CLIENT_ID"),
@@ -17,7 +15,6 @@ sp = spotipy.Spotify(
     )
 )
 
-# Mood keywords to search for
 MOOD_KEYWORDS = {
     "chill": ["chill", "relax", "calm"],
     "sad": ["sad", "cry", "heartbreak"],
@@ -26,9 +23,8 @@ MOOD_KEYWORDS = {
     "study": ["study", "focus", "ambient"],
 }
 
-MAX_PLAYLISTS = 50  # per mood
+MAX_PLAYLISTS = 50
 
-# Load or init genre cache
 GENRE_CACHE_PATH = "artist_genre_cache.json"
 
 
@@ -59,7 +55,6 @@ def get_artist_genres(artist_id):
         return []
 
 
-# Main data collection
 all_data = []
 
 for mood, keywords in MOOD_KEYWORDS.items():
@@ -115,4 +110,3 @@ print("✅ Saved to playlists_metadata.csv")
 
 save_cache(artist_genre_cache, GENRE_CACHE_PATH)
 print("✅ Genre cache updated")
-
